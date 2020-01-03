@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -10,11 +12,9 @@ access to the Virtual File Server (VFS) which you can use to manipulate files
 and folders.
 """
 from typing import Union, List, Tuple
+from six import string_types, integer_types
 
 __kodistubs__ = True
-
-int_type = Union[int, long]
-str_type = Union[str, unicode]
 
 
 class File(object):
@@ -38,11 +38,11 @@ class File(object):
     """
     
     def __init__(self, filepath, mode=None):
-        # type: (str_type, str) -> None
+        # type: (string_types, str) -> None
         pass
     
     def read(self, numBytes=0):
-        # type: (int_type) -> str
+        # type: (integer_types) -> str
         """
         Read file parts as string. 
 
@@ -59,7 +59,7 @@ class File(object):
         return ""
     
     def readBytes(self, numBytes=0):
-        # type: (int_type) -> bytearray
+        # type: (integer_types) -> bytearray
         """
         Read bytes from file. 
 
@@ -104,10 +104,10 @@ class File(object):
             s = f.size()
             f.close()
         """
-        return 0L
+        return 0
     
     def seek(self, seekBytes, iWhence):
-        # type: (int_type, int) -> long
+        # type: (integer_types, int) -> long
         """
         Seek to position in file. 
 
@@ -121,7 +121,7 @@ class File(object):
             result = f.seek(8129, 0)
             f.close()
         """
-        return 0L
+        return 0
     
     def close(self):
         # type: () -> None
@@ -155,7 +155,7 @@ class Stat(object):
     """
     
     def __init__(self, path):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         pass
     
     def st_mode(self):
@@ -165,7 +165,7 @@ class Stat(object):
 
         :return: st_mode 
         """
-        return 0L
+        return 0
     
     def st_ino(self):
         # type: () -> long
@@ -174,7 +174,7 @@ class Stat(object):
 
         :return: st_ino 
         """
-        return 0L
+        return 0
     
     def st_dev(self):
         # type: () -> long
@@ -185,7 +185,7 @@ class Stat(object):
 
         :return: st_dev 
         """
-        return 0L
+        return 0
     
     def st_nlink(self):
         # type: () -> long
@@ -194,7 +194,7 @@ class Stat(object):
 
         :return: st_nlink 
         """
-        return 0L
+        return 0
     
     def st_uid(self):
         # type: () -> long
@@ -203,7 +203,7 @@ class Stat(object):
 
         :return: st_uid 
         """
-        return 0L
+        return 0
     
     def st_gid(self):
         # type: () -> long
@@ -212,7 +212,7 @@ class Stat(object):
 
         :return: st_gid 
         """
-        return 0L
+        return 0
     
     def st_size(self):
         # type: () -> long
@@ -226,7 +226,7 @@ class Stat(object):
 
         :return: st_size 
         """
-        return 0L
+        return 0
     
     def st_atime(self):
         # type: () -> long
@@ -235,7 +235,7 @@ class Stat(object):
 
         :return: st_atime 
         """
-        return 0L
+        return 0
     
     def st_mtime(self):
         # type: () -> long
@@ -244,7 +244,7 @@ class Stat(object):
 
         :return: st_mtime 
         """
-        return 0L
+        return 0
     
     def st_ctime(self):
         # type: () -> long
@@ -253,11 +253,11 @@ class Stat(object):
 
         :return: st_ctime 
         """
-        return 0L
+        return 0
     
 
 def copy(strSource, strDestination):
-    # type: (str_type, str_type) -> bool
+    # type: (string_types, string_types) -> bool
     """
     Copy file to destination, returns true/false. 
 
@@ -273,7 +273,7 @@ def copy(strSource, strDestination):
 
 
 def delete(file):
-    # type: (str_type) -> bool
+    # type: (string_types) -> bool
     """
     Delete a file
 
@@ -288,7 +288,7 @@ def delete(file):
 
 
 def rename(file, newFile):
-    # type: (str_type, str_type) -> bool
+    # type: (string_types, string_types) -> bool
     """
     Rename a file
 
@@ -308,7 +308,7 @@ def rename(file, newFile):
 
 
 def exists(path):
-    # type: (str_type) -> bool
+    # type: (string_types) -> bool
     """
     Check for a file or folder existence
 
@@ -323,7 +323,7 @@ def exists(path):
 
 
 def mkdir(path):
-    # type: (str_type) -> bool
+    # type: (string_types) -> bool
     """
     Create a folder. 
 
@@ -338,7 +338,7 @@ def mkdir(path):
 
 
 def mkdirs(path):
-    # type: (str_type) -> bool
+    # type: (string_types) -> bool
     """
     Make all directories along the path 
 
@@ -355,7 +355,7 @@ def mkdirs(path):
 
 
 def rmdir(path, force=False):
-    # type: (str_type, bool) -> bool
+    # type: (string_types, bool) -> bool
     """
     Remove a folder. 
 
@@ -370,7 +370,7 @@ def rmdir(path, force=False):
 
 
 def listdir(path):
-    # type: (str_type) -> Tuple[List[str], List[str]]
+    # type: (string_types) -> Tuple[List[str], List[str]]
     """
     Lists content of a folder. 
 

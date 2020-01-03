@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -11,11 +13,10 @@ Graphical User Interface through windows, dialogs, and various control widgets.
 import sys
 from typing import Union, List, Dict, Tuple
 from xbmc import InfoTagVideo, InfoTagMusic
+from six import string_types
 
 __kodistubs__ = True
 
-int_type = Union[int, long]
-str_type = Union[str, unicode]
 
 INT_MAX = sys.maxint
 ACTION_ANALOG_FORWARD = 113
@@ -494,7 +495,7 @@ class Control(object):
         pass
     
     def setAnimations(self, eventAttr):
-        # type: (List[Tuple[str_type, str_type]]) -> None
+        # type: (List[Tuple[string_types, string_types]]) -> None
         """
         Set's the control's animations. 
 
@@ -514,7 +515,7 @@ class Control(object):
         pass
     
     def setPosition(self, x, y):
-        # type: (int_type, int_type) -> None
+        # type: (integer_types, integer_types) -> None
         """
         Set's the controls position. 
 
@@ -530,7 +531,7 @@ class Control(object):
         pass
     
     def setWidth(self, width):
-        # type: (int_type) -> None
+        # type: (integer_types) -> None
         """
         Set's the controls width. 
 
@@ -543,7 +544,7 @@ class Control(object):
         pass
     
     def setHeight(self, height):
-        # type: (int_type) -> None
+        # type: (integer_types) -> None
         """
         Set's the controls height. 
 
@@ -737,7 +738,7 @@ class ControlLabel(Control):
     
     def __init__(self, x, y, width, height, label, font=None, textColor=None,
                     disabledColor=None, alignment=0, hasPath=False, angle=0):
-        # type: (int_type, int_type, int_type, int_type, str_type, str, str, str, int_type, bool, int_type) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, string_types, str, str, str, integer_types, bool, integer_types) -> None
         pass
     
     def getLabel(self):
@@ -755,7 +756,7 @@ class ControlLabel(Control):
     
     def setLabel(self, label="", font=None, textColor=None, disabledColor=None,
                     shadowColor=None, focusedColor=None, label2=""):
-        # type: (str_type, str, str, str, str, str, str_type) -> None
+        # type: (string_types, str, str, str, str, str, string_types) -> None
         """
         Set's text for this label. 
 
@@ -830,12 +831,12 @@ class ControlEdit(Control):
     def __init__(self, x, y, width, height, label, font=None, textColor=None,
                     disabledColor=None, _alignment=0, focusTexture=None,
                     noFocusTexture=None, isPassword=False):
-        # type: (int_type, int_type, int_type, int_type, str_type, str, str, str, int_type, str, str, bool) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, string_types, str, str, str, integer_types, str, str, bool) -> None
         pass
     
     def setLabel(self, label="", font=None, textColor=None, disabledColor=None,
                     shadowColor=None, focusedColor=None, label2=""):
-        # type: (str_type, str, str, str, str, str, str_type) -> None
+        # type: (string_types, str, str, str, str, str, string_types) -> None
         """
         Set's text heading for this edit control. 
 
@@ -871,7 +872,7 @@ class ControlEdit(Control):
         return ""
     
     def setText(self, text):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Set's text value for this edit control. 
 
@@ -899,7 +900,7 @@ class ControlEdit(Control):
         return ""
     
     def setType(self, type, heading):
-        # type: (int, str_type) -> None
+        # type: (int, string_types) -> None
         """
         Sets the type of this edit control. 
 
@@ -989,11 +990,11 @@ class ControlList(Control):
                     selectedColor=None, _imageWidth=10, _imageHeight=10,
                     _itemTextXOffset=10, _itemTextYOffset=2, _itemHeight=27,
                     _space=2, _alignmentY=4):
-        # type: (int_type, int_type, int_type, int_type, str, str, str, str, str, int_type, int_type, int_type, int_type, int_type, int_type, int_type) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, str, str, str, str, integer_types, integer_types, integer_types, integer_types, integer_types, integer_types, integer_types) -> None
         pass
     
     def addItem(self, item, sendMessage=True):
-        # type: (Union[str_type, ListItem], bool) -> None
+        # type: (Union[string_types, ListItem], bool) -> None
         """
         Add a new item to this list control. 
 
@@ -1006,7 +1007,7 @@ class ControlList(Control):
         pass
     
     def addItems(self, items):
-        # type: (List[Union[str_type, ListItem]]) -> None
+        # type: (List[Union[string_types, ListItem]]) -> None
         """
         Adds a list of listitems or strings to this list control. 
 
@@ -1022,7 +1023,7 @@ class ControlList(Control):
         pass
     
     def selectItem(self, item):
-        # type: (int_type) -> None
+        # type: (integer_types) -> None
         """
         Select an item by index number. 
 
@@ -1087,7 +1088,7 @@ class ControlList(Control):
 
             pos = cList.getSelectedPosition()
         """
-        return 0L
+        return 0
     
     def getSelectedItem(self):
         # type: () -> ListItem
@@ -1107,7 +1108,7 @@ class ControlList(Control):
         return ListItem()
     
     def setImageDimensions(self, imageWidth, imageHeight):
-        # type: (int_type, int_type) -> None
+        # type: (integer_types, integer_types) -> None
         """
         Sets the width/height of items icon or thumbnail. 
 
@@ -1157,7 +1158,7 @@ class ControlList(Control):
 
             cnt = cList.size()
         """
-        return 0L
+        return 0
     
     def getItemHeight(self):
         # type: () -> long
@@ -1170,7 +1171,7 @@ class ControlList(Control):
 
             item_height = self.cList.getItemHeight()
         """
-        return 0L
+        return 0
     
     def getSpace(self):
         # type: () -> long
@@ -1183,7 +1184,7 @@ class ControlList(Control):
 
             gap = self.cList.getSpace()
         """
-        return 0L
+        return 0
     
     def getListItem(self, index):
         # type: (int) -> ListItem
@@ -1263,11 +1264,11 @@ class ControlFadeLabel(Control):
     """
     
     def __init__(self, x, y, width, height, font=None, textColor=None, _alignment=0):
-        # type: (int_type, int_type, int_type, int_type, str, str, int_type) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, str, integer_types) -> None
         pass
     
     def addLabel(self, label):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Add a label to this control for scrolling. 
 
@@ -1324,11 +1325,11 @@ class ControlTextBox(Control):
     """
     
     def __init__(self, x, y, width, height, font=None, textColor=None):
-        # type: (int_type, int_type, int_type, int_type, str, str) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, str) -> None
         pass
     
     def setText(self, text):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Set's the text for this textbox. 
 
@@ -1368,7 +1369,7 @@ class ControlTextBox(Control):
         pass
     
     def scroll(self, id):
-        # type: (int_type) -> None
+        # type: (integer_types) -> None
         """
         Scrolls to the given position. 
 
@@ -1430,7 +1431,7 @@ class ControlImage(Control):
     """
     
     def __init__(self, x, y, width, height, filename, aspectRatio=0, colorDiffuse=None):
-        # type: (int_type, int_type, int_type, int_type, str, int_type, str) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, integer_types, str) -> None
         pass
     
     def setImage(self, imageFilename, useCache=True):
@@ -1513,7 +1514,7 @@ class ControlProgress(Control):
     
     def __init__(self, x, y, width, height, texturebg=None, textureleft=None,
                     texturemid=None, textureright=None, textureoverlay=None):
-        # type: (int_type, int_type, int_type, int_type, str, str, str, str, str) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, str, str, str, str) -> None
         pass
     
     def setPercent(self, pct):
@@ -1608,12 +1609,12 @@ class ControlButton(Control):
                     alignment=(0 | 4), font=None, textColor=None,
                     disabledColor=None, angle=0, shadowColor=None,
                     focusedColor=None):
-        # type: (int_type, int_type, int_type, int_type, str_type, str, str, int_type, int_type, int_type, str, str, str, int_type, str, str) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, string_types, str, str, integer_types, integer_types, integer_types, str, str, str, integer_types, str, str) -> None
         pass
     
     def setLabel(self, label="", font=None, textColor=None, disabledColor=None,
                     shadowColor=None, focusedColor=None, label2=""):
-        # type: (str_type, str, str, str, str, str, str_type) -> None
+        # type: (string_types, str, str, str, str, str, string_types) -> None
         """
         Set's this buttons text attributes. 
 
@@ -1712,7 +1713,7 @@ class ControlGroup(Control):
     """
     
     def __init__(self, x, y, width, height):
-        # type: (int_type, int_type, int_type, int_type) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types) -> None
         pass
     
 
@@ -1784,7 +1785,7 @@ class ControlRadioButton(Control):
                     disabledColor=None, angle=0, shadowColor=None,
                     focusedColor=None, disabledOnTexture=None,
                     disabledOffTexture=None):
-        # type: (int_type, int_type, int_type, int_type, str_type, str, str, str, str, str, str, int_type, int_type, int_type, str, str, str, int_type, str, str, str, str) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, string_types, str, str, str, str, str, str, integer_types, integer_types, integer_types, str, str, str, integer_types, str, str, str, str) -> None
         pass
     
     def setSelected(self, selected):
@@ -1819,7 +1820,7 @@ class ControlRadioButton(Control):
     
     def setLabel(self, label="", font=None, textColor=None, disabledColor=None,
                     shadowColor=None, focusedColor=None, label2=""):
-        # type: (str_type, str, str, str, str, str, str_type) -> None
+        # type: (string_types, str, str, str, str, str, string_types) -> None
         """
         Set's the radio buttons text attributes. 
 
@@ -1846,7 +1847,7 @@ class ControlRadioButton(Control):
         pass
     
     def setRadioDimension(self, x, y, width, height):
-        # type: (int_type, int_type, int_type, int_type) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types) -> None
         """
         Sets the radio buttons's radio texture's position and size. 
 
@@ -1900,7 +1901,7 @@ class ControlSlider(Control):
     
     def __init__(self, x, y, width, height, textureback=None, texture=None,
                     texturefocus=None, orientation=1):
-        # type: (int_type, int_type, int_type, int_type, str, str, str, int) -> None
+        # type: (integer_types, integer_types, integer_types, integer_types, str, str, str, int) -> None
         pass
     
     def getPercent(self):
@@ -2011,7 +2012,7 @@ class Dialog(object):
     
     def yesno(self, heading, line1, line2="", line3="", nolabel="", yeslabel="",
                 autoclose=0):
-        # type: (str_type, str_type, str_type, str_type, str_type, str_type, int) -> bool
+        # type: (string_types, string_types, string_types, string_types, string_types, string_types, int) -> bool
         """
         **Yes / no dialog**
 
@@ -2059,7 +2060,7 @@ class Dialog(object):
         return True
     
     def select(self, heading, list, autoclose=0, preselect=-1, useDetails=False):
-        # type: (str_type, List[Union[str_type, ListItem]], int, int, bool) -> int
+        # type: (string_types, List[Union[string_types, ListItem]], int, int, bool) -> int
         """
         Select dialog
 
@@ -2087,7 +2088,7 @@ class Dialog(object):
         return 0
     
     def contextmenu(self, list):
-        # type: (List[str_type]) -> int
+        # type: (List[string_types]) -> int
         """
         Show a context menu.
 
@@ -2106,7 +2107,7 @@ class Dialog(object):
     
     def multiselect(self, heading, options, autoclose=0, preselect=None,
                         useDetails=False):
-        # type: (str_type, List[Union[str_type, ListItem]], int, List[int], bool) -> List[int]
+        # type: (string_types, List[Union[string_types, ListItem]], int, List[int], bool) -> List[int]
         """
         Show a multi-select dialog.
 
@@ -2135,7 +2136,7 @@ class Dialog(object):
         return [0]
     
     def ok(self, heading, line1, line2="", line3=""):
-        # type: (str_type, str_type, str_type, str_type) -> bool
+        # type: (string_types, string_types, string_types, string_types) -> bool
         """
         OK dialog
 
@@ -2159,7 +2160,7 @@ class Dialog(object):
         return True
     
     def textviewer(self, heading, text, usemono=False):
-        # type: (str_type, str_type, bool) -> None
+        # type: (string_types, string_types, bool) -> None
         """
         TextViewer dialog
 
@@ -2181,7 +2182,7 @@ class Dialog(object):
     
     def browse(self, type, heading, shares, mask="", useThumbs=False,
                     treatAsFolder=False, defaultt="", enableMultiple=False):
-        # type: (int, str_type, str_type, str_type, bool, bool, str_type, bool) -> Union[str, List[str]]
+        # type: (int, string_types, string_types, string_types, bool, bool, string_types, bool) -> Union[str, List[str]]
         """
         Browser dialog
 
@@ -2245,7 +2246,7 @@ class Dialog(object):
     
     def browseSingle(self, type, heading, shares, mask="", useThumbs=False,
                         treatAsFolder=False, defaultt=""):
-        # type: (int, str_type, str_type, str_type, bool, bool, str_type) -> str
+        # type: (int, string_types, string_types, string_types, bool, bool, string_types) -> str
         """
         Browse single dialog
 
@@ -2303,7 +2304,7 @@ class Dialog(object):
     
     def browseMultiple(self, type, heading, shares, mask="", useThumbs=False,
                             treatAsFolder=False, defaultt=""):
-        # type: (int, str_type, str_type, str_type, bool, bool, str_type) -> List[str]
+        # type: (int, string_types, string_types, string_types, bool, bool, string_types) -> List[str]
         """
         Browser dialog
 
@@ -2359,7 +2360,7 @@ class Dialog(object):
         return [""]
     
     def numeric(self, type, heading, defaultt=""):
-        # type: (int, str_type, str_type) -> str
+        # type: (int, string_types, string_types) -> str
         """
         Numeric dialog
 
@@ -2390,7 +2391,7 @@ class Dialog(object):
         return ""
     
     def notification(self, heading, message, icon="", time=0, sound=True):
-        # type: (str_type, str_type, str_type, int, bool) -> None
+        # type: (string_types, string_types, string_types, int, bool) -> None
         """
         Show a Notification alert.
 
@@ -2416,7 +2417,7 @@ class Dialog(object):
         pass
     
     def input(self, heading, defaultt="", type=0, option=0, autoclose=0):
-        # type: (str_type, str_type, int, int, int) -> str
+        # type: (string_types, string_types, int, int, int) -> str
         """
         Show an Input dialog.
 
@@ -2467,7 +2468,7 @@ class DialogProgress(object):
         pass
     
     def create(self, heading, line1="", line2="", line3=""):
-        # type: (str_type, str_type, str_type, str_type) -> None
+        # type: (string_types, string_types, string_types, string_types) -> None
         """
         Create and show a progress dialog.
 
@@ -2488,7 +2489,7 @@ class DialogProgress(object):
         pass
     
     def update(self, percent, line1="", line2="", line3=""):
-        # type: (int, str_type, str_type, str_type) -> None
+        # type: (int, string_types, string_types, string_types) -> None
         """
         Updates the progress dialog.
 
@@ -2602,7 +2603,7 @@ class DialogProgressBG(object):
         pass
     
     def create(self, heading, message=""):
-        # type: (str_type, str_type) -> None
+        # type: (string_types, string_types) -> None
         """
         Create and show a background progress dialog.
 
@@ -2620,7 +2621,7 @@ class DialogProgressBG(object):
         pass
     
     def update(self, percent=0, heading="", message=""):
-        # type: (int, str_type, str_type) -> None
+        # type: (int, string_types, string_types) -> None
         """
         Updates the background progress dialog.
 
@@ -2684,7 +2685,7 @@ class ListItem(object):
     
     def __init__(self, label="", label2="", iconImage="", thumbnailImage="",
                     path="", offscreen=False):
-        # type: (str_type, str_type, str_type, str_type, str_type, bool) -> None
+        # type: (string_types, string_types, string_types, string_types, string_types, bool) -> None
         pass
     
     def getLabel(self):
@@ -2716,7 +2717,7 @@ class ListItem(object):
         return ""
     
     def setLabel(self, label):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Sets the listitem's label. 
 
@@ -2730,7 +2731,7 @@ class ListItem(object):
         pass
     
     def setLabel2(self, label):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Sets the listitem's label2. 
 
@@ -2744,21 +2745,21 @@ class ListItem(object):
         pass
     
     def setIconImage(self, iconImage):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Deprecated. Use **setArt()**. 
         """
         pass
     
     def setThumbnailImage(self, thumbFilename):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Deprecated. Use **setArt()**. 
         """
         pass
     
     def setArt(self, dictionary):
-        # type: (Dict[str, str_type]) -> None
+        # type: (Dict[str, string_types]) -> None
         """
         Sets the listitem's art 
 
@@ -2804,7 +2805,7 @@ class ListItem(object):
         pass
     
     def setUniqueIDs(self, dictionary, defaultrating=""):
-        # type: (Dict[str, str_type], str_type) -> None
+        # type: (Dict[str, string_types], string_types) -> None
         """
         Sets the listitem's uniqueID 
 
@@ -2830,7 +2831,7 @@ class ListItem(object):
         pass
     
     def setRating(self, type, rating, votes=0, defaultt=False):
-        # type: (str_type, float, int, bool) -> None
+        # type: (string_types, float, int, bool) -> None
         """
         Sets a listitem's rating. It needs at least type and rating param 
 
@@ -2858,7 +2859,7 @@ class ListItem(object):
         pass
     
     def addSeason(self, number, name=""):
-        # type: (int, str_type) -> None
+        # type: (int, string_types) -> None
         """
         Add a season with name to a listitem. It needs at least the season number 
 
@@ -3005,7 +3006,7 @@ class ListItem(object):
         return True
     
     def setInfo(self, type, infoLabels):
-        # type: (str, Dict[str, str_type]) -> None
+        # type: (str, Dict[str, string_types]) -> None
         """
         Sets the listitem's infoLabels. 
 
@@ -3191,7 +3192,7 @@ class ListItem(object):
         pass
     
     def setCast(self, actors):
-        # type: (List[Dict[str, str_type]]) -> None
+        # type: (List[Dict[str, string_types]]) -> None
         """
         Set cast including thumbnails
 
@@ -3218,7 +3219,7 @@ class ListItem(object):
         pass
     
     def setAvailableFanart(self, images):
-        # type: (List[Dict[str, str_type]]) -> None
+        # type: (List[Dict[str, string_types]]) -> None
         """
         Set available images (needed for scrapers)
 
@@ -3247,7 +3248,7 @@ class ListItem(object):
     
     def addAvailableArtwork(self, url, art_type="", referrer="", cache="",
                                 post=False, isgz=False, season=-1):
-        # type: (str_type, str_type, str_type, str_type, bool, bool, int) -> None
+        # type: (string_types, string_types, string_types, string_types, bool, bool, int) -> None
         """
         Add an image to available artworks (needed for scrapers)
 
@@ -3268,7 +3269,7 @@ class ListItem(object):
         pass
     
     def addStreamInfo(self, cType, dictionary):
-        # type: (str, Dict[str, str_type]) -> None
+        # type: (str, Dict[str, string_types]) -> None
         """
         Add a stream with details.
 
@@ -3312,7 +3313,7 @@ class ListItem(object):
         pass
     
     def addContextMenuItems(self, items, replaceItems=False):
-        # type: (List[Tuple[str_type, str_type]], bool) -> None
+        # type: (List[Tuple[string_types, string_types]], bool) -> None
         """
         Adds item(s) to the context menu for media lists. 
 
@@ -3332,7 +3333,7 @@ class ListItem(object):
         pass
     
     def setProperty(self, key, value):
-        # type: (str, str_type) -> None
+        # type: (str, string_types) -> None
         """
         Sets a listitem property, similar to an infolabel. 
 
@@ -3355,7 +3356,7 @@ class ListItem(object):
         pass
     
     def setProperties(self, dictionary):
-        # type: (Dict[str, str_type]) -> None
+        # type: (Dict[str, string_types]) -> None
         """
         Sets multiple properties for listitem's 
 
@@ -3386,7 +3387,7 @@ class ListItem(object):
         return ""
     
     def setPath(self, path):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Sets the listitem's path. 
 
@@ -3401,7 +3402,7 @@ class ListItem(object):
         pass
     
     def setMimeType(self, mimetype):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Sets the listitem's mimetype if known. 
 
@@ -3426,7 +3427,7 @@ class ListItem(object):
         pass
     
     def setSubtitles(self, subtitleFiles):
-        # type: (List[str_type]) -> None
+        # type: (List[string_types]) -> None
         """
         Sets subtitles for this listitem. 
 
@@ -3528,7 +3529,7 @@ class Action(object):
               if action.getId() == ACTION_PREVIOUS_MENU:
                 print('action received: previous')
         """
-        return 0L
+        return 0
     
     def getButtonCode(self):
         # type: () -> long
@@ -3537,7 +3538,7 @@ class Action(object):
 
         :return: [integer] button code 
         """
-        return 0L
+        return 0
     
     def getAmount1(self):
         # type: () -> float
@@ -3648,7 +3649,7 @@ class Window(object):
         :raises SystemError: On Internal error 
         :raises RuntimeError: If no control has focus 
         """
-        return 0L
+        return 0
     
     def removeControl(self, pControl):
         # type: (Control) -> None
@@ -3683,7 +3684,7 @@ class Window(object):
 
         :return: Window height in pixels   Function changed 
         """
-        return 0L
+        return 0
     
     def getWidth(self):
         # type: () -> long
@@ -3692,7 +3693,7 @@ class Window(object):
 
         :return: Window width in pixels   Function changed 
         """
-        return 0L
+        return 0
     
     def getResolution(self):
         # type: () -> long
@@ -3718,10 +3719,10 @@ class Window(object):
 
         .. note:: Deprecated.
         """
-        return 0L
+        return 0
     
     def setCoordinateResolution(self, res):
-        # type: (int_type) -> None
+        # type: (integer_types) -> None
         """
         Sets the resolution 
 
@@ -3758,7 +3759,7 @@ class Window(object):
         pass
     
     def setProperty(self, key, value):
-        # type: (str, str_type) -> None
+        # type: (str, string_types) -> None
         """
         Sets a window property, similar to an infolabel. 
 
@@ -4110,11 +4111,11 @@ class WindowXML(Window):
     
     def __init__(self, xmlFilename, scriptPath, defaultSkin="Default",
                     defaultRes="720p", isMedia=False):
-        # type: (str_type, str_type, str_type, str_type, bool) -> None
+        # type: (string_types, string_types, string_types, string_types, bool) -> None
         pass
     
     def addItem(self, item, position=INT_MAX):
-        # type: (Union[str_type, ListItem], int) -> None
+        # type: (Union[string_types, ListItem], int) -> None
         """
         Add a new item to this WindowList. 
 
@@ -4133,7 +4134,7 @@ class WindowXML(Window):
         pass
     
     def addItems(self, items):
-        # type: (List[Union[str_type, ListItem]]) -> None
+        # type: (List[Union[string_types, ListItem]]) -> None
         """
         Add a list of items to to the window list. 
 
@@ -4218,7 +4219,7 @@ class WindowXML(Window):
         pass
     
     def setContainerProperty(self, strProperty, strValue):
-        # type: (str_type, str_type) -> None
+        # type: (string_types, string_types) -> None
         """
         Sets a container property, similar to an infolabel. 
 
@@ -4237,7 +4238,7 @@ class WindowXML(Window):
         pass
     
     def setContent(self, strValue):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Sets the content type of the container. 
 
@@ -4337,7 +4338,7 @@ class WindowXMLDialog(WindowXML):
     
     def __init__(self, xmlFilename, scriptPath, defaultSkin="Default",
                     defaultRes="720p"):
-        # type: (str_type, str_type, str_type, str_type) -> None
+        # type: (string_types, string_types, string_types, string_types) -> None
         pass
 
 
@@ -4352,7 +4353,7 @@ def getCurrentWindowId():
 
         wid = xbmcgui.getCurrentWindowId()
     """
-    return 0L
+    return 0
 
 
 def getCurrentWindowDialogId():
@@ -4366,7 +4367,7 @@ def getCurrentWindowDialogId():
 
         wid = xbmcgui.getCurrentWindowDialogId()
     """
-    return 0L
+    return 0
 
 
 def getScreenHeight():
@@ -4376,7 +4377,7 @@ def getScreenHeight():
 
     :return: Screen height   New function added. 
     """
-    return 0L
+    return 0
 
 
 def getScreenWidth():
@@ -4386,4 +4387,4 @@ def getScreenWidth():
 
     :return: Screen width   New function added. 
     """
-    return 0L
+    return 0

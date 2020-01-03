@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -14,8 +16,7 @@ from typing import Union, List, Tuple
 
 __kodistubs__ = True
 
-int_type = Union[int, long]
-str_type = Union[str, unicode]
+from six import string_types
 
 DRIVE_NOT_READY = 1
 ENGLISH_NAME = 2
@@ -890,7 +891,7 @@ class Keyboard(object):
     """
     
     def __init__(self, line="", heading="", hidden=False):
-        # type: (str_type, str_type, bool) -> None
+        # type: (string_types, string_types, bool) -> None
         pass
     
     def doModal(self, autoclose=0):
@@ -908,7 +909,7 @@ class Keyboard(object):
         pass
     
     def setDefault(self, line=""):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Set the default text entry. 
 
@@ -934,7 +935,7 @@ class Keyboard(object):
         pass
     
     def setHeading(self, heading):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         Set the keyboard heading. 
 
@@ -1034,7 +1035,7 @@ class Monitor(object):
         pass
     
     def onScanStarted(self, library):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         onScanStarted method. 
 
@@ -1048,7 +1049,7 @@ class Monitor(object):
         pass
     
     def onScanFinished(self, library):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         onScanFinished method. 
 
@@ -1062,21 +1063,21 @@ class Monitor(object):
         pass
     
     def onDatabaseScanStarted(self, database):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         .. warning:: Deprecated. Use **onScanStarted()**.
         """
         pass
     
     def onDatabaseUpdated(self, database):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         .. warning:: Deprecated. Use **onScanFinished()**.
         """
         pass
     
     def onCleanStarted(self, library):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         onCleanStarted method.
 
@@ -1090,7 +1091,7 @@ class Monitor(object):
         pass
     
     def onCleanFinished(self, library):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         onCleanFinished method. 
 
@@ -1112,7 +1113,7 @@ class Monitor(object):
         pass
     
     def onNotification(self, sender, method, data):
-        # type: (str_type, str_type, str_type) -> None
+        # type: (string_types, string_types, string_types) -> None
         """
         onNotification method. 
 
@@ -1170,7 +1171,7 @@ class Player(object):
         pass
     
     def play(self, item="", listitem=None, windowed=False, startpos=-1):
-        # type: (Union[str_type, PlayList], 'xbmcgui.ListItem', bool, int) -> None
+        # type: (Union[string_types, PlayList], 'xbmcgui.ListItem', bool, int) -> None
         """
         Play a item.
 
@@ -1647,7 +1648,7 @@ class PlayList(object):
         return 0
     
     def add(self, url, listitem=None, index=-1):
-        # type: (str_type, 'xbmcgui.ListItem', int) -> None
+        # type: (string_types, 'xbmcgui.ListItem', int) -> None
         """
         Adds a new file to the playlist. 
 
@@ -1935,7 +1936,7 @@ def executeJSONRPC(jsonrpccommand):
 
 
 def sleep(timemillis):
-    # type: (int_type) -> None
+    # type: (integer_types) -> None
     """
     Sleeps for 'time' msec. 
 
@@ -2049,7 +2050,7 @@ def getDVDState():
 
         dvdstate = xbmc.getDVDState()
     """
-    return 0L
+    return 0
 
 
 def getFreeMem():
@@ -2063,7 +2064,7 @@ def getFreeMem():
 
         freemem = xbmc.getFreeMem()
     """
-    return 0L
+    return 0
 
 
 def getInfoLabel(cLine):
@@ -2183,7 +2184,7 @@ def getGlobalIdleTime():
 
 
 def getCacheThumbName(path):
-    # type: (str_type) -> str
+    # type: (string_types) -> str
     """
     Get thumb cache filename. 
 
@@ -2198,7 +2199,7 @@ def getCacheThumbName(path):
 
 
 def makeLegalFilename(filename, fatX=True):
-    # type: (str_type, bool) -> str
+    # type: (string_types, bool) -> str
     """
     Returns a legal filename or path as a string.
 
@@ -2219,7 +2220,7 @@ def makeLegalFilename(filename, fatX=True):
 
 
 def translatePath(path):
-    # type: (str_type) -> str
+    # type: (string_types) -> str
     """
     Returns the translated path. 
 
@@ -2238,7 +2239,7 @@ def translatePath(path):
 
 
 def getCleanMovieTitle(path, usefoldername=False):
-    # type: (str_type, bool) -> Tuple[str, str]
+    # type: (string_types, bool) -> Tuple[str, str]
     """
     Get clean movie title and year string if available. 
 
@@ -2254,7 +2255,7 @@ def getCleanMovieTitle(path, usefoldername=False):
 
 
 def validatePath(path):
-    # type: (str_type) -> str
+    # type: (string_types) -> str
     """
     Returns the validated path. 
 

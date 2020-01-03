@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -12,10 +14,9 @@ development time and a more consistent user experience.
 """
 from typing import Union, List, Tuple
 from xbmcgui import ListItem
+from six import string_types
 
 __kodistubs__ = True
-
-str_type = Union[str, unicode]
 
 SORT_METHOD_ALBUM = 14
 SORT_METHOD_ALBUM_IGNORE_THE = 15
@@ -63,7 +64,7 @@ SORT_METHOD_VIDEO_YEAR = 18
 
 
 def addDirectoryItem(handle, url, listitem, isFolder=False, totalItems=0):
-    # type: (int, str_type, ListItem, bool, int) -> bool
+    # type: (int, string_types, ListItem, bool, int) -> bool
     """
     Callback function to pass directory contents back to Kodi. 
 
@@ -88,7 +89,7 @@ def addDirectoryItem(handle, url, listitem, isFolder=False, totalItems=0):
 
 
 def addDirectoryItems(handle, items, totalItems=0):
-    # type: (int, List[Tuple[str_type, ListItem, bool]], int) -> bool
+    # type: (int, List[Tuple[string_types, ListItem, bool]], int) -> bool
     """
     Callback function to pass directory contents back to Kodi as a list. 
 
@@ -148,7 +149,7 @@ def setResolvedUrl(handle, succeeded, listitem):
 
 
 def addSortMethod(handle, sortMethod, label2Mask=""):
-    # type: (int, int, str_type) -> None
+    # type: (int, int, string_types) -> None
     """
     Adds a sorting method for the media list. 
 
@@ -257,7 +258,7 @@ def getSetting(handle, id):
 
 
 def setSetting(handle, id, value):
-    # type: (int, str_type, str_type) -> None
+    # type: (int, string_types, string_types) -> None
     """
     Sets a plugin setting for the current running plugin. 
 
@@ -301,7 +302,7 @@ def setContent(handle, content):
 
 
 def setPluginCategory(handle, category):
-    # type: (int, str_type) -> None
+    # type: (int, string_types) -> None
     """
     Sets the plugins name for skins to display. 
 
@@ -334,7 +335,7 @@ def setPluginFanart(handle, image=None, color1=None, color2=None, color3=None):
 
 
 def setProperty(handle, key, value):
-    # type: (int, str, str_type) -> None
+    # type: (int, str, string_types) -> None
     """
     Sets a container property for this plugin. 
 

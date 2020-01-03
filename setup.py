@@ -1,4 +1,5 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
 
 from io import open
 try:
@@ -16,7 +17,7 @@ setup(
     py_modules=[
         'xbmc', 'xbmcaddon', 'xbmcgui', 'xbmcplugin', 'xbmcvfs', 'xbmcdrm'
     ],
-    install_requires=['typing'],
+    install_requires=['typing', 'six'],
     zip_safe=False,
     description='Stub modules that re-create Kodi Python API',
     long_description=long_descr,

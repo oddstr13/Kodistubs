@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -6,10 +8,9 @@
 Kodi's addon class
 """
 from typing import Union
+from six import string_types
 
 __kodistubs__ = True
-
-str_type = Union[str, unicode]
 
 
 class Addon(object):
@@ -136,7 +137,7 @@ class Addon(object):
         return ""
     
     def setSetting(self, id, value):
-        # type: (str, str_type) -> None
+        # type: (str, string_types) -> None
         """
         Sets a script setting. 
 
@@ -210,7 +211,7 @@ class Addon(object):
         return True
     
     def setSettingString(self, id, value):
-        # type: (str, str_type) -> bool
+        # type: (str, string_types) -> bool
         """
         Sets a script setting. 
 

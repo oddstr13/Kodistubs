@@ -1,4 +1,6 @@
 # coding: utf-8
+from __future__ import division, absolute_import, print_function, unicode_literals
+
 # This file is generated from Kodi source code and post-edited
 # to correct code style and docstrings formatting.
 # License: GPL v.3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
@@ -6,10 +8,9 @@
 Kodi's DRM class
 """
 from typing import Union, Dict
+from six import string_types
 
 __kodistubs__ = True
-
-str_type = Union[str, unicode]
 
 
 class CryptoSession(object):
@@ -26,11 +27,11 @@ class CryptoSession(object):
     """
     
     def __init__(self, UUID, cipherAlgorithm, macAlgorithm):
-        # type: (str_type, str_type, str_type) -> None
+        # type: (string_types, string_types, string_types) -> None
         pass
     
     def GetKeyRequest(self, init, mimeType, offlineKey, optionalParameters):
-        # type: (Union[str, bytearray], str_type, bool, Dict[str_type, str_type]) -> bytearray
+        # type: (Union[str, bytearray], string_types, bool, Dict[string_types, string_types]) -> bytearray
         """
         Generate a key request which is supposed to be send to the key server.
         The servers response is passed to provideKeyResponse to activate the keys.
@@ -47,7 +48,7 @@ class CryptoSession(object):
         return bytearray()
     
     def GetPropertyString(self, name):
-        # type: (str_type) -> str
+        # type: (string_types) -> str
         """
         Request a system specific property value of the DRM system 
 
@@ -84,7 +85,7 @@ class CryptoSession(object):
         pass
     
     def RestoreKeys(self, keySetId):
-        # type: (str_type) -> None
+        # type: (string_types) -> None
         """
         restores keys stored during previous provideKeyResponse call. 
 
@@ -96,7 +97,7 @@ class CryptoSession(object):
         pass
     
     def SetPropertyString(self, name, value):
-        # type: (str_type, str_type) -> None
+        # type: (string_types, string_types) -> None
         """
         Sets a system specific property value in the DRM system 
 

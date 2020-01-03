@@ -90,8 +90,8 @@ The following table explains some of the type annotations:
 Type annotation         Function/method argument or return value
 ======================= =============================================================
 ``str``                 Accepts or returns a UTF-8 encoded byte string (:class:`str`)
-``str_type``            Accepts both :class:`str` and :class:`unicode`
-``int_type``            Accepts both :class:`int` and :class:`long`
+``string_types``            Accepts both :class:`str` and :class:`unicode`
+``integer_types``            Accepts both :class:`int` and :class:`long`
 ``Union[type1, type2]`` Accepts or returns either ``type1`` or ``type2``
 ======================= =============================================================
 
