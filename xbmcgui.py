@@ -18,7 +18,7 @@ from six import string_types
 __kodistubs__ = True
 
 
-INT_MAX = sys.maxint
+INT_MAX = getattr(sys, 'maxint', float('inf'))  # Python3 has no concept of max int size
 ACTION_ANALOG_FORWARD = 113
 ACTION_ANALOG_MOVE = 49
 ACTION_ANALOG_MOVE_X_LEFT = 601
